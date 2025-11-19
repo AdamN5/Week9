@@ -1,17 +1,38 @@
 package ie.atu;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class BankAccount {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    private String accNo;
+    private String name;
+    private double balance;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+    public BankAccount(String accNo, String name, double balance) {
+        if (balance <= 0) {
+            throw new IllegalArgumentException("Balance must be greater than 0.");
         }
+        this.accNo = accNo;
+        this.name = name;
+        this.balance = balance;
+    }
+
+    public BankAccount() {
+
+    }
+    public String getAccNo()
+    {
+        return accNo;
+    }
+    public String getName()
+    {
+        return name;
+    }
+    public double getBalance()
+    {
+        return balance;
+    }
+    public static int deposit(int amount)
+    {
+        if (amount <= 0)
+            throw new IllegalArgumentException("Deposit must be greater than 0.");
+        return amount;
     }
 }
