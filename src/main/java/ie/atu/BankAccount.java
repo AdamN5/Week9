@@ -29,4 +29,10 @@ public class BankAccount {
     {
         return balance;
     }
+    public static int deposit(int amount)
+    {
+        if (amount <= 0)
+            throw new IllegalArgumentException("Deposit must be greater than 0.");
+        return amount;
+    }
 }
