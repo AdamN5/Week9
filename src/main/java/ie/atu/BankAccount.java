@@ -35,4 +35,15 @@ public class BankAccount {
             throw new IllegalArgumentException("Deposit must be greater than 0.");
         return amount;
     }
+
+    public void withdraw(double amount)
+    {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Withdraw amount must be greater than 0.");
+        }
+        if (amount > balance) {
+            throw new IllegalArgumentException("Insufficient funds for withdrawal.");
+        }
+        balance -= amount;
+    }
 }
